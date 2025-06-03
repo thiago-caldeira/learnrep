@@ -2,18 +2,19 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minha Loja</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="logo">🛍️ Infinity Store</div>
+    <div class="logo">🛍️ Minha Loja</div>
     <nav>
       <ul class="menu">
         <li><a href="#">Início</a></li>
         <li><a href="#">Produtos</a></li>
         <li><a href="#">Contato</a></li>
+        <li><a href="#" id="open-cart">🛒 Carrinho (<span id="cart-count">0</span>)</a></li>
       </ul>
     </nav>
   </header>
@@ -21,31 +22,34 @@
   <main>
     <h1>Nossos Produtos</h1>
     <section class="product-grid">
-      <div class="product">
-        <img src="assets/img/produto1.jpg" alt="Produto 1">
+      <div class="product" data-id="1" data-name="Produto 1" data-price="99.90">
+        <img src="https://picsum.photos/300?random=1" alt="Produto 1">
         <h2>Produto 1</h2>
-        <p>Descrição breve do produto.</p>
+        <p>Descrição do Produto 1</p>
         <span class="price">R$ 99,90</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
-      <div class="product">
-        <img src="assets/img/produto2.jpg" alt="Produto 2">
+      <div class="product" data-id="2" data-name="Produto 2" data-price="129.90">
+        <img src="https://picsum.photos/300?random=2" alt="Produto 2">
         <h2>Produto 2</h2>
-        <p>Descrição breve do produto.</p>
+        <p>Descrição do Produto 2</p>
         <span class="price">R$ 129,90</span>
-      </div>
-      <div class="product">
-        <img src="assets/img/produto3.jpg" alt="Produto 3">
-        <h2>Produto 3</h2>
-        <p>Descrição breve do produto.</p>
-        <span class="price">R$ 89,90</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
     </section>
   </main>
 
+  <div id="cart-modal" class="cart-modal hidden">
+    <h2>🛒 Seu Carrinho</h2>
+    <ul id="cart-items"></ul>
+    <p><strong>Total: R$ <span id="cart-total">0.00</span></strong></p>
+    <button onclick="closeCart()">Fechar</button>
+  </div>
+
   <footer>
-    <p>📧 contato@minhaloja.com.br</p>
-    <p>🔗 Siga-nos nas redes sociais</p>
-    <p>&copy; 2025 Minha Loja. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Minha Loja</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
